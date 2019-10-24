@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h2>Use the forms below to add an expense</h2>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.expense.label }}  {{ form.description.label }}  {{ form.category.label }}<br>
+            {{ form.expense(size=32) }}  {{ form.description(size=32) }}  {{ form.category(size=32) }}  {{ form.submit() }}
+        </p>
+    </form>
+{% endblock %}
