@@ -1,6 +1,6 @@
 from environs import Env
 import os
-import datetime
+from datetime import datetime
 from pymongo import MongoClient
 import dateutil.parser
 
@@ -24,13 +24,13 @@ db = client["expense_tracker"]
 expenses = db.expences
 
 #d = datetime.datetime.strptime("2017-10-13T10:53:53.000Z", "%Y-%m-%dT%H:%M:%S.000Z")
-my_date_str = "2019-10-24T16:00:00Z"
-my_datetime = dateutil.parser.parse(my_date_str)
+my_date_str = "2019-10-24T16:05:00Z"
+my_datetime = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
 expense = {
-        "expense": "99.99",
-        "description": "pub night thursday",
-        "category": "entertainment",
+        "expense": "9.40",
+        "description": "burger",
+        "category": "food",
         "date": my_datetime
         }
 id = expenses.insert_one(expense).inserted_id
